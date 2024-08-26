@@ -7,11 +7,13 @@ void main() => runApp(const MyApp());
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  static const String title = "Convertidor de Moneda";
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const HomeScreen(),
+      home: const HomeScreen(title),
       theme: appTheme,
       darkTheme: appDarkTheme,
     );
