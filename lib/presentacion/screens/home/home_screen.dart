@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_2/presentacion/screens/currency_convert/currency_convert_screen.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
   final String title;
@@ -19,10 +20,9 @@ class HomeScreen extends StatelessWidget {
             Text('Welcome to $title  App!'),
             FloatingActionButton.extended(
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CurrencyConvertScreen()));
+                  // como ya tenemos creado routing, no es necesario usar Navigator push
+                  // Navigator.push( context, MaterialPageRoute(builder: (context) => CurrencyConvertScreen()));
+                  context.go('/currency_convert');
                 },
                 label: const Text('Ir al convertidor de divisa'),
                 icon: const Icon(Icons.monetization_on)),
